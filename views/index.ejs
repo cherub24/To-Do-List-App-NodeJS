@@ -1,0 +1,15 @@
+<h1>To-Do List</h1>
+
+<ul>
+  <% for (const todo of todos) { %>
+    <li>
+      <span><%= todo %></span>
+      <a href="/edit/<%= todos.indexOf(todo) %>">Edit</a>
+      <form action="/delete/<%= todos.indexOf(todo) %>" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% } %>
+</ul>
+
+<a href="/create">Create New Task</a>
